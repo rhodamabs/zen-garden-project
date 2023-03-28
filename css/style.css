@@ -38,7 +38,7 @@ header h1 {
 section.intro h2 {
   /* Added by Nicole */
   grid-column: 4/6;
-  font-size: 2em;
+  font-size: 2.7em;
   font-family: "Playfair Display";
   text-shadow: -4px 3px white; }
 
@@ -50,7 +50,13 @@ div.summary#zen-summary {
   /* Added by Nicole */
   grid-column: 4/ span 2;
   grid-row: 2/3;
-  border-bottom-style: none; }
+  border-bottom-style: none;
+  border-radius: 10%;
+  font-size: 1.2em;
+  padding: 0px 10px;
+  align-content: center;
+  margin: 0px 10px 10px 0px;
+  background-image: conic-gradient(#2f4c26 50deg, #f3de2c 100deg, #9db4ab 200deg, #ece6e6, #2f4c26, #9db4ab, #f3de2c); }
 
 div.preamble {
   /* Added by Nicole */
@@ -84,7 +90,9 @@ div[role="article"] {
   .sidebar h3 {
     font-size: 2em;
     background: #ece6e6;
-    border: 2px solid black; }
+    border: 2px solid black;
+    border-radius: 20px 5px;
+    text-align: center; }
   .sidebar ul {
     list-style: none; }
     .sidebar ul li:before {
@@ -100,7 +108,7 @@ div[role="article"] {
     .sidebar ul li {
       display: block;
       height: 75px;
-      font-size: 1.5em;
+      font-size: 1.1em;
       width: 300px; }
 
 footer {
