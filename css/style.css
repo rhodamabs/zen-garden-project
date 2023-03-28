@@ -68,7 +68,10 @@ div.preamble {
   font-size: 1.2em; }
 
 div[role="main"] {
-  background-color: #ece6e6; }
+  background-color: #ece6e6;
+  padding: 20px; }
+  div[role="main"] h3 {
+    font-size: 2em; }
 
 div[role="article"] {
   border-color: #2f4b26;
@@ -77,6 +80,10 @@ div[role="article"] {
 .sidebar {
   grid-area: aside;
   background-color: #93744d; }
+  .sidebar h3 {
+    font-size: 2em;
+    background: #ece6e6;
+    border: 2px solid black; }
   .sidebar ul {
     list-style: none; }
     .sidebar ul li:before {
@@ -87,7 +94,13 @@ div[role="article"] {
       background-size: contain;
       background-repeat: no-repeat;
       padding: 35px;
-      margin-left: -35px; }
+      margin-left: -35px;
+      margin-right: 10px; }
+    .sidebar ul li {
+      display: block;
+      height: 75px;
+      font-size: 1.5em;
+      width: 300px; }
 
 footer {
   display: grid;
@@ -95,11 +108,12 @@ footer {
   justify-items: center; }
   footer a {
     text-decoration: none;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+    display: flex;
+    width: 100px;
+    height: 100px;
     font-size: 1rem;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     margin-top: 1rem;
     border-style: solid;
     border-width: 10px;
