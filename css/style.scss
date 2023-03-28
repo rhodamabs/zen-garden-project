@@ -90,13 +90,13 @@ div.summary#zen-summary { /* Added by Nicole */
 	grid-column: 4/ span 2;
 	grid-row: 2/3;
 	border-bottom-style: none;
-    border-radius: 10%;
-    @include fontSize(1.2em);
+    border-radius: 3%;
+    @include fontSize(1.3em);
     padding: 0px 10px;
     align-content: center;
     margin: 0px 10px 10px 0px;
  background-image:conic-gradient($sunflower-leaves-color 50deg,$sunflower-color 100deg, $header-color 200deg,
-$body-color,$sunflower-leaves-color,$header-color, $sunflower-color);
+$body-color,$sunflower-color,$sunflower-leaves-color ,$header-color, $sunflower-color);
 }
 
 div.preamble { /* Added by Nicole */

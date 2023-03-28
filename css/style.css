@@ -51,12 +51,12 @@ div.summary#zen-summary {
   grid-column: 4/ span 2;
   grid-row: 2/3;
   border-bottom-style: none;
-  border-radius: 10%;
-  font-size: 1.2em;
+  border-radius: 3%;
+  font-size: 1.3em;
   padding: 0px 10px;
   align-content: center;
   margin: 0px 10px 10px 0px;
-  background-image: conic-gradient(#2f4c26 50deg, #f3de2c 100deg, #9db4ab 200deg, #ece6e6, #2f4c26, #9db4ab, #f3de2c); }
+  background-image: conic-gradient(#2f4c26 50deg, #f3de2c 100deg, #9db4ab 200deg, #ece6e6, #f3de2c, #2f4c26, #9db4ab, #f3de2c); }
 
 div.preamble {
   /* Added by Nicole */
