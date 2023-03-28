@@ -37,7 +37,7 @@ $sunflower-leaves-color: #2f4c26;
 }
 
 div.page-wrapper { /* Added by Nicole & Rhoda*/
-    @include fontSize(1.5em);
+    @include fontSize(1em);
   display: grid;
 	grid-template-areas: 
 		"header header header header" 
@@ -53,7 +53,7 @@ section.intro{
   grid-area: header; /* Added by Nicole */
   display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(4, 200px);
+	grid-template-rows: repeat(4, 250px);
     padding: 3%;
 }
 
