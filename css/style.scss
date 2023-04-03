@@ -3,10 +3,10 @@ $vine-color: #2f4b26;
 $design-selection-background-color: #93744d;
 $header-color: #9db4ab;
 $body-color: #ece6e6;
-$body-font:'Roboto', sans-serif;
-$fonts :'Playfair Display'; 
+$body-font:'Roboto', sans-serif; /* Added by Rhoda  */
+$fonts :'Playfair Display'; /* Added by Rhoda  */
 
-$break-small: 400px;
+$break-small: 600px;
 $break-medium: 900px;
 $break-large: 1400px;
 
@@ -14,38 +14,77 @@ $sunflower-circle-size: 100px;
 $sunflower-border-width: 10px;
 $sunflower-leaves-color: #2f4c26;
 
-@mixin fontSize($fsize){
+@mixin fontSize($fsize){ /*Added by Rhoda*/
     font-size: $fsize;
+}
+@mixin pborders {
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid $design-selection-background-color;
+  border-radius: 20px;
+    box-shadow: 10px 10px 5px $design-selection-background-color;
 }
 
 @mixin breakpoint($break) {
     @if $break == large {
-        @media (max-width: $break-large) {@content}
+        @media (max-width: $break-large) {@content;}
     }
     @else if $break == medium {
-        @media (max-width: $break-medium) {@content}
+        @media (max-width: $break-medium) {@content;}
     }
     @else if $break == small {
-        @media (max-width: $break-small) {@content}
+        @media (max-width: $break-small) {@content;}
     }
     @else {
-        @media ($break) {@content}
+        @media ($break) {@content;}
     }
 }
 * {
     box-sizing: border-box;
 }
 
-div.page-wrapper { /* Added by Nicole & Rhoda*/
-    @include fontSize(1em);
+html {
+  background-image: url(sunflower.svg);
+  background-position: 18% 2%;
+  background-repeat: no-repeat;
+  background-size: 17% 15%;
+  @include breakpoint('small'){
+      background-image: none;
+  }
+}
+
+div.page-wrapper { /* Added by Nicole */
+    @include fontSize(1rem); /* Edited By Everton */
   display: grid;
 	grid-template-areas: 
-		"header header header header" 
+		"header header header header " 
 		"aside main main main" 
 		"aside main main main" 
 		"aside main main main"; 
-    font-family: $body-font;
-    padding:50px;
+    font-family: $body-font; /*Added by Rhoda*/
+    padding:5px;
+    padding-top: 0;
+
+
+    @include breakpoint('medium'){
+      grid-template-areas: 
+      "header header" 
+      "aside main" 
+      "aside main" 
+      "aside main";
+      padding: 0;
+    }
+  
+    @include breakpoint('small'){
+      grid-template-areas: 
+      "header" 
+      "main" 
+      "main" 
+      "aside"; 
+      padding: 0;
+    }
+
+    
 }
 
 section.intro{
@@ -53,8 +92,23 @@ section.intro{
   grid-area: header; /* Added by Nicole */
   display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: 150px 150px 100px;
-    padding: 3%;
+	grid-template-rows: 80px 200px 100px; /*   Edited by Rhoda */
+  padding: 3%; /*   Edited by Rhoda */
+  @include breakpoint('small'){
+    padding: 0;
+    gap:35px;
+  }
+}
+
+#zen-intro{
+  background: url(windmill.svg) center no-repeat;
+  grid-template-columns: repeat(5, 1fr); /* Edited by Rhoda*/
+  @include breakpoint('small'){
+    background: url(windmill.svg)center no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
 }
 
 header { /* Added by Nicole */
@@ -62,41 +116,64 @@ header { /* Added by Nicole */
 	grid-template-columns: repeat(5, 1fr);
   grid-column: 1/6;
 	grid-row: 1/2;
-  background: URL("https://codepen.io/Murffkins/pen/WNgEypN");
+  @include breakpoint('small'){
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 } 
 
  /* Added by Nicole */
 header h1{
   grid-column: 1/2;
-  @include fontSize(3em);
-  background: -webkit-linear-gradient(#b8b42d, #dd403a, #697a21);
+  margin-top: 0px;
+  @include fontSize(4rem); /* Edited by Everton */
+  background: -webkit-linear-gradient(#000, #b8b42d, #000); /*Added by Rhoda*/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: $fonts;
+
+  @include breakpoint('small'){
+    grid-column: 1/5;
+  }
 }
 
 section.intro h2 { /* Added by Nicole */
-	grid-column: 4/6;
-    @include fontSize(2.7em);
+	  grid-column: 4/6;
+    @include fontSize(2.5rem);/*Added by Rhoda & Edited by Everton */
     font-family: $fonts;
     text-shadow: -4px 3px white;
+    @include breakpoint('small'){
+      grid-column: 1/5;
+    }
 } 
 
 div.main-supporting { /* Added by Nicole */
 	grid-area: main;
 }
 
-div.summary#zen-summary { /* Added by Nicole */
+#zen-summary { /* Added by Nicole */
 	grid-column: 4/ span 2;
 	grid-row: 2/3;
 	border-bottom-style: none;
-    border-radius: 3%;
-    @include fontSize(1.3em);
-    padding: 0px 10px;
-    align-content: center;
-    margin: 0px 10px 10px 0px;
- background-image:conic-gradient($sunflower-leaves-color 50deg,$sunflower-color 100deg, $header-color 200deg,
-$body-color,$sunflower-color,$sunflower-leaves-color ,$header-color, $sunflower-color);
+  border-radius: 3%;
+  @include fontSize(1rem); /*Added by Rhoda*/
+  font-weight: bolder;
+  padding: 4px 10px;
+  align-content: center;
+  margin: 50px 10px 0px 0px;
+ //  background-image:conic-gradient(	#E6E6FA 50deg,$vine-color 100deg, 	#E6E6FA 200deg, /*Added by Rhoda*/
+  background: linear-gradient(to bottom, $design-selection-background-color, $body-color, $vine-color);
+  
+
+  @include breakpoint('small'){
+    padding: 5px;
+    margin: 2px;
+    margin-top: 5rem;
+  	grid-column: 1/ 6;
+    grid-row: 3/4;
+    height: 150px;
+    @include fontSize(1rem); /*Added by Rhoda*/
+  }
 }
 
 div.preamble { /* Added by Nicole */
@@ -104,25 +181,38 @@ div.preamble { /* Added by Nicole */
 	grid-row: 3/5;
 	padding-left: 5%;
 	padding-right: 5%;
+  margin-top: 100px;
 	border-color: #2f4b26;
 	border-top-style: solid;
 	border-bottom-style: solid;
-    background: $body-color;
-    h3 {
-        text-shadow: -2px 3px white;
-        font-family: $fonts;
-        @include fontSize(1.2em);
-        text-align: center;
-    } 
+  background: $body-color;
+  h3 { /*Added by Rhoda*/
+      text-shadow: -2px 3px white;
+      font-family: $fonts;
+      @include fontSize(2rem);
+      text-align: center;
+  } 
+
+  @include breakpoint('small'){
+	  grid-row: 4/5;
+
+  }
 }
 
  
 
 div[role="main"]{
-    background:radial-gradient( $header-color, $body-color,$header-color, $body-color);
-  padding: 20px;
-  h3 {
-    @include fontSize(2em);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background:radial-gradient( $header-color, $body-color,$header-color, $body-color); /*Edited by Rhoda*/
+  padding: 20px; /*Added by Rhoda*/
+  h3 { /*Added by Rhoda*/
+    @include fontSize(2rem); 
+    margin-bottom: 0px;
+    text-shadow: -2px 3px white;
+  }
+  @include breakpoint('small'){
+    display: block;
   }
 }
 
@@ -130,12 +220,28 @@ div[role="article"]{
     border-color: $vine-color;
     border-bottom-style: solid;
 }
-
+.explanation {/*Added by Rhoda*/
+  @include pborders(); 
+}
+.participation {/*Added by Rhoda*/
+  @include pborders();
+}
+.benefits {/*Added by Rhoda*/
+  @include pborders();
+  grid-row: 2;
+  grid-column: span 2;
+}
+.requirements {/*Added by Rhoda*/
+  @include pborders();
+  grid-row: 3;
+  grid-column: span 2;
+}
 .sidebar{
   grid-area: aside;
-  background-color: $design-selection-background-color;
-  h3 {
-    @include fontSize(2em);
+  // background-color: $design-selection-background-color;
+  background-image: url(dirt.png);
+  h3 {/*Added by Rhoda*/
+    @include fontSize(1.5rem); 
     background: $body-color;
     border: 2px solid black;
     border-radius: 20px 5px ;
@@ -146,7 +252,7 @@ div[role="article"]{
     li:before{
       content: '';
       // display: inline-block;      
-        background-image: url('https://cdn-icons-png.flaticon.com/128/4942/4942513.png');
+        background-image: url('Bud.svg');
         height: 25px;
         width: 35px;
         background-size: contain;
@@ -155,11 +261,19 @@ div[role="article"]{
         margin-left: -35px;
         margin-right: 10px;
     }
+
+    li:hover:before {
+        background: url('bud animation.svg') center top no-repeat;
+    }
+
     li {
-        display:block ;
-        height: 75px;
-        @include fontSize(1.1em);
-        width: 300px
+      display:block ;
+      height: 70px; /*Added by Rhoda*/
+      @include fontSize(1.1rem); /*Added by Rhoda*/
+      width: 300px; /*Added by Rhoda*/
+      @include breakpoint('small'){
+        width: 100%;
+      }
     }
   }
 }
@@ -168,36 +282,23 @@ div[role="article"]{
 footer{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-column: span 2;
   justify-items: center;
+  justify-content: center;
+
   
   a{
     text-decoration: none;
-    display: flex;
-    width: $sunflower-circle-size;
-    height: $sunflower-circle-size;
-    font-size: 1rem;
-    align-items: center;
-   justify-content: center;
-    margin-top: 1rem;
-    border-style: solid;
-    border-width: $sunflower-border-width;
-    border-radius: 50%;
-    border-color: $sunflower-leaves-color;
-    padding: 0.4rem;
-    background-color: $sunflower-color;
+    background: url("sunflower.svg") center no-repeat;
+    background-size: 200% 200%;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-top: 30px;
   }
 
-//Nicole trial  
-  a:hover {
-    animation: grow 4s linear ease-in;
-    
-}
-//Nicole trial
-  @keyframes grow {
-    0% {left: 0px; top:0px;}
-    25% {left:0px; top:10px;}
-    50% {left:0px; top:20px;}
-    75% {left:0px; top:30px;}
-    100% {left:0px; top:0px;}
+  @include breakpoint('small'){
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -1,13 +1,36 @@
+/* Added by Rhoda  */
+/* Added by Rhoda  */
 * {
   box-sizing: border-box; }
 
+html {
+  background-image: url(sunflower.svg);
+  background-position: 18% 2%;
+  background-repeat: no-repeat;
+  background-size: 17% 15%; }
+  @media (max-width: 600px) {
+    html {
+      background-image: none; } }
+
 div.page-wrapper {
-  /* Added by Nicole & Rhoda*/
-  font-size: 1em;
+  /* Added by Nicole */
+  /*Added by Rhoda*/
+  font-size: 1rem;
+  /* Edited By Everton */
   display: grid;
-  grid-template-areas: "header header header header" "aside main main main"  "aside main main main"  "aside main main main";
+  grid-template-areas: "header header header header " "aside main main main"  "aside main main main"  "aside main main main";
   font-family: "Roboto", sans-serif;
-  padding: 50px; }
+  /*Added by Rhoda*/
+  padding: 5px;
+  padding-top: 0; }
+  @media (max-width: 900px) {
+    div.page-wrapper {
+      grid-template-areas: "header header" "aside main"  "aside main"  "aside main";
+      padding: 0; } }
+  @media (max-width: 600px) {
+    div.page-wrapper {
+      grid-template-areas: "header" "main"  "main"  "aside";
+      padding: 0; } }
 
 section.intro {
   background-color: #9db4ab;
@@ -15,48 +38,94 @@ section.intro {
   /* Added by Nicole */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 150px 150px 100px;
-  padding: 3%; }
+  grid-template-rows: 80px 200px 100px;
+  /*   Edited by Rhoda */
+  padding: 3%;
+  /*   Edited by Rhoda */ }
+  @media (max-width: 600px) {
+    section.intro {
+      padding: 0;
+      gap: 35px; } }
+
+#zen-intro {
+  background: url(windmill.svg) center no-repeat;
+  grid-template-columns: repeat(5, 1fr);
+  /* Edited by Rhoda*/ }
+  @media (max-width: 600px) {
+    #zen-intro {
+      background: url(windmill.svg) center no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: bottom; } }
 
 header {
   /* Added by Nicole */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column: 1/6;
-  grid-row: 1/2;
-  background: URL("https://codepen.io/Murffkins/pen/WNgEypN"); }
+  grid-row: 1/2; }
+  @media (max-width: 600px) {
+    header {
+      grid-template-columns: 1fr;
+      justify-items: center; } }
 
 /* Added by Nicole */
 header h1 {
   grid-column: 1/2;
-  font-size: 3em;
-  background: -webkit-linear-gradient(#b8b42d, #dd403a, #697a21);
+  margin-top: 0px;
+  /*Added by Rhoda*/
+  font-size: 4rem;
+  /* Edited by Everton */
+  background: -webkit-linear-gradient(#000, #b8b42d, #000);
+  /*Added by Rhoda*/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Playfair Display"; }
+  @media (max-width: 600px) {
+    header h1 {
+      grid-column: 1/5; } }
 
 section.intro h2 {
   /* Added by Nicole */
   grid-column: 4/6;
-  font-size: 2.7em;
+  /*Added by Rhoda*/
+  font-size: 2.5rem;
+  /*Added by Rhoda & Edited by Everton */
   font-family: "Playfair Display";
   text-shadow: -4px 3px white; }
+  @media (max-width: 600px) {
+    section.intro h2 {
+      grid-column: 1/5; } }
 
 div.main-supporting {
   /* Added by Nicole */
   grid-area: main; }
 
-div.summary#zen-summary {
+#zen-summary {
   /* Added by Nicole */
   grid-column: 4/ span 2;
   grid-row: 2/3;
   border-bottom-style: none;
   border-radius: 3%;
-  font-size: 1.3em;
-  padding: 0px 10px;
+  /*Added by Rhoda*/
+  font-size: 1rem;
+  /*Added by Rhoda*/
+  font-weight: bolder;
+  padding: 4px 10px;
   align-content: center;
-  margin: 0px 10px 10px 0px;
-  background-image: conic-gradient(#2f4c26 50deg, #f3de2c 100deg, #9db4ab 200deg, #ece6e6, #f3de2c, #2f4c26, #9db4ab, #f3de2c); }
+  margin: 50px 10px 0px 0px;
+  background: linear-gradient(to bottom, #93744d, #ece6e6, #2f4b26); }
+  @media (max-width: 600px) {
+    #zen-summary {
+      padding: 5px;
+      margin: 2px;
+      margin-top: 5rem;
+      grid-column: 1/ 6;
+      grid-row: 3/4;
+      height: 150px;
+      /*Added by Rhoda*/
+      font-size: 1rem;
+      /*Added by Rhoda*/ } }
 
 div.preamble {
   /* Added by Nicole */
@@ -64,31 +133,86 @@ div.preamble {
   grid-row: 3/5;
   padding-left: 5%;
   padding-right: 5%;
+  margin-top: 100px;
   border-color: #2f4b26;
   border-top-style: solid;
   border-bottom-style: solid;
   background: #ece6e6; }
   div.preamble h3 {
+    /*Added by Rhoda*/
     text-shadow: -2px 3px white;
     font-family: "Playfair Display";
-    font-size: 1.2em;
+    /*Added by Rhoda*/
+    font-size: 2rem;
     text-align: center; }
+  @media (max-width: 600px) {
+    div.preamble {
+      grid-row: 4/5; } }
 
 div[role="main"] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   background: radial-gradient(#9db4ab, #ece6e6, #9db4ab, #ece6e6);
-  padding: 20px; }
+  /*Edited by Rhoda*/
+  padding: 20px;
+  /*Added by Rhoda*/ }
   div[role="main"] h3 {
-    font-size: 2em; }
+    /*Added by Rhoda*/
+    /*Added by Rhoda*/
+    font-size: 2rem;
+    margin-bottom: 0px;
+    text-shadow: -2px 3px white; }
+  @media (max-width: 600px) {
+    div[role="main"] {
+      display: block; } }
 
 div[role="article"] {
   border-color: #2f4b26;
   border-bottom-style: solid; }
 
+.explanation {
+  /*Added by Rhoda*/
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid #93744d;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #93744d; }
+
+.participation {
+  /*Added by Rhoda*/
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid #93744d;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #93744d; }
+
+.benefits {
+  /*Added by Rhoda*/
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid #93744d;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #93744d;
+  grid-row: 2;
+  grid-column: span 2; }
+
+.requirements {
+  /*Added by Rhoda*/
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid #93744d;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #93744d;
+  grid-row: 3;
+  grid-column: span 2; }
+
 .sidebar {
   grid-area: aside;
-  background-color: #93744d; }
+  background-image: url(dirt.png); }
   .sidebar h3 {
-    font-size: 2em;
+    /*Added by Rhoda*/
+    /*Added by Rhoda*/
+    font-size: 1.5rem;
     background: #ece6e6;
     border: 2px solid black;
     border-radius: 20px 5px;
@@ -97,7 +221,7 @@ div[role="article"] {
     list-style: none; }
     .sidebar ul li:before {
       content: '';
-      background-image: url("https://cdn-icons-png.flaticon.com/128/4942/4942513.png");
+      background-image: url("Bud.svg");
       height: 25px;
       width: 35px;
       background-size: contain;
@@ -105,48 +229,38 @@ div[role="article"] {
       padding: 35px;
       margin-left: -35px;
       margin-right: 10px; }
+    .sidebar ul li:hover:before {
+      background: url("bud animation.svg") center top no-repeat; }
     .sidebar ul li {
       display: block;
-      height: 75px;
-      font-size: 1.1em;
-      width: 300px; }
+      height: 70px;
+      /*Added by Rhoda*/
+      /*Added by Rhoda*/
+      font-size: 1.1rem;
+      /*Added by Rhoda*/
+      width: 300px;
+      /*Added by Rhoda*/ }
+      @media (max-width: 600px) {
+        .sidebar ul li {
+          width: 100%; } }
 
 footer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  justify-items: center; }
+  grid-column: span 2;
+  justify-items: center;
+  justify-content: center; }
   footer a {
     text-decoration: none;
-    display: flex;
-    width: 100px;
-    height: 100px;
-    font-size: 1rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-    border-style: solid;
-    border-width: 10px;
-    border-radius: 50%;
-    border-color: #2f4c26;
-    padding: 0.4rem;
-    background-color: #f3de2c; }
-  footer a:hover {
-    animation: grow 4s linear ease-in; }
-@keyframes grow {
-  0% {
-    left: 0px;
-    top: 0px; }
-  25% {
-    left: 0px;
-    top: 10px; }
-  50% {
-    left: 0px;
-    top: 20px; }
-  75% {
-    left: 0px;
-    top: 30px; }
-  100% {
-    left: 0px;
-    top: 0px; } }
+    background: url("sunflower.svg") center no-repeat;
+    background-size: 200% 200%;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-top: 30px; }
+  @media (max-width: 600px) {
+    footer {
+      grid-template-columns: repeat(2, 1fr); } }
 
 /*# sourceMappingURL=style.css.map */
